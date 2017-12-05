@@ -14,6 +14,7 @@ class BibliographyController extends Controller
     public function index()
     {
         //
+        return "hello";
     }
 
     /**
@@ -24,6 +25,7 @@ class BibliographyController extends Controller
     public function create()
     {
         //
+        return view('bibliographies.add');
     }
 
     /**

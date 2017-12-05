@@ -6,8 +6,6 @@
     
     <title>Bibliotheque</title>
   
-    <?php require("common_script.php"); ?>
-
 		<SCRIPT LANGUAGE="JavaScript">
     /*
       function addBarCord() {
@@ -38,9 +36,14 @@
         }
       }
     </SCRIPT>
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/all.css')}}">
   </head>
   <body>
-
+<?php
+  $error_str = null;
+  $isSubmitEnabled = FALSE;
+?>
     <header class="header">
       <div class="button btn">
         左
