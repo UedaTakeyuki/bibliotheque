@@ -52,5 +52,15 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/UedaTakeyuki/ndlsearch.git"
+        }
+    ],
+    "require": {
+        "uedatakeyuki/ndlsearch": "dev-master"
     }
 }
+
