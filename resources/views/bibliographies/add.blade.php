@@ -19,11 +19,11 @@
     */
       function readISBNCord() {
         // launch pic2shop and tell it to open Google Products with scan result
-        window.location="pic2shop://scan?callback=http%3A//klingsor.uedasoft.com/tools/171002/add.php%3Fcommand%3DaddISBN%26barcord%3DEAN";
+        window.location="pic2shop://scan?callback=http%3A//bibliotheque.uedasoft.com/bibliographies/create%3Fcommand%3DaddISBN%26barcord%3DEAN";
       }
       function readJANCord() {
         // launch pic2shop and tell it to open Google Products with scan result
-        window.location="pic2shop://scan?callback=http%3A//klingsor.uedasoft.com/tools/171002/add.php%3Fcommand%3DaddJAN%26barcord%3DEAN";
+        window.location="pic2shop://scan?callback=http%3A//bibliotheque.uedasoft.com/bibliographies/create%3Fcommand%3DaddJAN%26barcord%3DEAN";
       }
       function block_duplex(submit){
         if(submit.disabled){
@@ -46,7 +46,7 @@
 ?>
     <header class="header">
       <div class="button btn">
-        左
+        左{{session('isbn')}}
       </div>
       <h4 class="logo">Bibliotheque</h4>
       <div class="button btn">
@@ -69,7 +69,7 @@
       <input type="hidden" name="creator"   id="creator"    value="<?= isset($_SESSION["creator"])?$_SESSION["creator"]:"" ?>" />
       <input type="hidden" name="publisher" id="publisher"  value="<?= isset($_SESSION["publisher"])?$_SESSION["publisher"]:"" ?>" />
       <input type="hidden" name="price"     id="price"      value="<?= isset($_SESSION["price"])?$_SESSION["price"]:"" ?>" />
-        ISBN: <?= isset($_SESSION["isbn"])?$_SESSION["isbn"]:"" ?><br>
+        ISBN: {{session('isbn')}}<br>
         書名: <?= isset($_SESSION["title"])?$_SESSION["title"]:"" ?><br>
         価格: <?= isset($_SESSION["price"])?$_SESSION["price"]:"" ?><br>
       <input type="text"    <?= $isSubmitEnabled? '' : 'disabled="disabled"' ?> name="memo" id="memo" placeholder="メモ"/>
