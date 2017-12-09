@@ -5,46 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
+// refer:
+// http://laraveldaily.com/how-to-use-external-classes-and-php-files-in-laravel-controller/
+// https://s8a.jp/laravel-custom-helper
 use App\Classes\NDLsearch;
-
-/*
-class NDLsearch{
-  private $dcNode = '';
-  public function __construct($isbn){
-    $this->dcNode = $this->search_node($isbn);
-  }
-  public function title(){
-    return $this->dcNode->title;
-  }
-  public function creator(){
-    return $this->dcNode->creator;
-  }
-  public function publisher(){
-    return $this->dcNode->publisher;
-  }
-  public function subject(){
-    return $this->dcNode->subject;
-  }
-  public function description(){
-    return $this->dcNode->description;
-  }
-  public function language(){
-    return $this->dcNode->language;
-  }
-  private function search_node($isbn){
-    // make OpenURL for NDL search.
-    // refer: http://iss.ndl.go.jp/information/api/
-    $url = "http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&query=isbn%3d".$isbn;
-    $xml = simplexml_load_file($url);
-    // bibliographical data is recorded as escaped string of DC, need parse again.
-    $str = htmlspecialchars_decode($xml->records[0]->record->recordData);
-    $xml1 = simplexml_load_string($str);
-    // get Dublin Core node
-    $dcNode = $xml1->children('http://purl.org/dc/elements/1.1/');
-    return $dcNode;
-  }
-};
-*/
 
 class BibliographyController extends Controller
 {
