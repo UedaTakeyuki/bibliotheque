@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
+use App\Classes\NDLsearch;
+
+/*
 class NDLsearch{
   private $dcNode = '';
   public function __construct($isbn){
@@ -41,6 +44,7 @@ class NDLsearch{
     return $dcNode;
   }
 };
+*/
 
 class BibliographyController extends Controller
 {
