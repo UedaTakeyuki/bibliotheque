@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
+use App\Bibliography;
 
 // refer:
 // http://laraveldaily.com/how-to-use-external-classes-and-php-files-in-laravel-controller/
@@ -57,7 +58,7 @@ class BibliographyController extends Controller
                 // read the price and put it on the FORM.
                 if (mb_strlen($barcode) == 13
                     && (substr($barcode,0,3) == "191" || substr($barcode,0,3) == "192")){
-                    session(['price' => intval(substr($barcode,7,5))."円"]);
+                    session(['price' => intval(substr($barcode,7,5))]);
                 } else {
                     $error_str = "書籍JAN コードではありません";
                 }
@@ -79,6 +80,16 @@ class BibliographyController extends Controller
     public function store(Request $request)
     {
         //
+        $bibliography = new Bibliography;
+        $bibliography->isbn      = $request->isbn;
+        $bibliography->title     = $request->title;
+        $bibliography->creator   = $request->creator;
+        $bibliography->publisher = $request->publisher;
+        $bibliography->price     = $request->price;
+        $bibliography->memo      = $request->memo;
+        $bibliography->user_id   = $request->user_id;
+        $bibliography->save();
+        return "hello";
     }
 
     /**
