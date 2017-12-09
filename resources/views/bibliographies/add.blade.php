@@ -65,6 +65,7 @@
       <input type="hidden" name="creator"   id="creator"    value="{{session('creator')}}" />
       <input type="hidden" name="publisher" id="publisher"  value="{{session('publisher')}}" />
       <input type="hidden" name="price"     id="price"      value="{{session('price')}}" />
+      <input type="hidden" name="user_id"   id="user_id"    value="{{$user_id}}" />
         ISBN: {{session('isbn')}}<br>
         書名: {{session('title')}}<br>
         価格: {{session('price')}}<br>

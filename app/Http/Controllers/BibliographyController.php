@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 
 // refer:
 // http://laraveldaily.com/how-to-use-external-classes-and-php-files-in-laravel-controller/
@@ -64,7 +65,8 @@ class BibliographyController extends Controller
             }
             $isSubmitEnabled = session()->exists('isbn')&&session()->exists('price');
             return view('bibliographies.add',['isSubmitEnabled' => $isSubmitEnabled,
-                                              'error_str' => $error_str]);
+                                              'error_str'       => $error_str,
+                                              'user_id'         => Auth::id()]);
         }
     }
 
