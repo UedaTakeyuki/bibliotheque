@@ -46,7 +46,7 @@
 ?>
     <header class="header">
       <div class="button btn">
-        左{{session('isbn')}}
+        左
       </div>
       <h4 class="logo">Bibliotheque</h4>
       <div class="button btn">
@@ -70,8 +70,8 @@
       <input type="hidden" name="publisher" id="publisher"  value="<?= isset($_SESSION["publisher"])?$_SESSION["publisher"]:"" ?>" />
       <input type="hidden" name="price"     id="price"      value="<?= isset($_SESSION["price"])?$_SESSION["price"]:"" ?>" />
         ISBN: {{session('isbn')}}<br>
-        書名: <?= isset($_SESSION["title"])?$_SESSION["title"]:"" ?><br>
-        価格: <?= isset($_SESSION["price"])?$_SESSION["price"]:"" ?><br>
+        書名: {{session('title')}}<br>
+        価格: {{session('price')}}<br>
       <input type="text"    <?= $isSubmitEnabled? '' : 'disabled="disabled"' ?> name="memo" id="memo" placeholder="メモ"/>
       <input type="submit"  <?= $isSubmitEnabled? '' : 'disabled="disabled"' ?> value="登録" />
     </form>
