@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBibliographiesTable extends Migration
+class CreatBibliographiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,10 @@ class CreateBibliographiesTable extends Migration
             $table->string('title');
             $table->string('creator');
             $table->string('publisher');
-            $table->string('price');
+            $table->integer('price')->unsigned();
+            $table->string('memo');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
