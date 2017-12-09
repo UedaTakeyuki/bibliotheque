@@ -40,9 +40,6 @@
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
   </head>
   <body>
-<?php
-  $error_str = null;
-?>
     <header class="header">
       <div class="button btn">
         左
@@ -61,7 +58,7 @@
       <INPUT TYPE=BUTTON OnClick="readJANCord();" VALUE="JANコードのスキャン">
     </FORM>
 
-    <p style="color: orangered; font-weight: 700"><?= is_null($error_str)?'':$error_str ?></p>
+    <p style="color: orangered; font-weight: 700">{{$error_str}}</p>
     <form action="<?= $_SERVER['SCRIPT_NAME']; ?>" method="post" data-ajax="false" onsubmit="return block_duplex(this.submit)">
       <input type="hidden" name="isbn"      id="isbn"       value="{{session('isbn')}}" />
       <input type="hidden" name="title"     id="title"      value="{{session('title')}}" />

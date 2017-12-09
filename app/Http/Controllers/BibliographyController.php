@@ -30,6 +30,7 @@ class BibliographyController extends Controller
      */
     public function create()
     {
+        $error_str = "";
         //
         if (is_null(Input::get('command'))||is_null(Input::get('barcode'))){
             return view('bibliographies.add');
@@ -62,7 +63,8 @@ class BibliographyController extends Controller
                 break;
             }
             $isSubmitEnabled = session()->exists('isbn')&&session()->exists('price');
-            return view('bibliographies.add',['isSubmitEnabled' => $isSubmitEnabled]);
+            return view('bibliographies.add',['isSubmitEnabled' => $isSubmitEnabled,
+                                              'error_str' => $error_str]);
         }
     }
 
