@@ -72,8 +72,8 @@
         ISBN: {{session('isbn')}}<br>
         書名: {{session('title')}}<br>
         価格: {{session('price')}}<br>
-      <input type="text"    <?= $isSubmitEnabled? '' : 'disabled="disabled"' ?> name="memo" id="memo" placeholder="メモ"/>
-      <input type="submit"  <?= $isSubmitEnabled? '' : 'disabled="disabled"' ?> value="登録" />
+      <input type="text"    {{$isSubmitEnabled ? '' : 'disabled="disabled"'}} name="memo" id="memo" placeholder="メモ"/>
+      <input type="submit"  {{$isSubmitEnabled ? '' : 'disabled="disabled"'}} value="登録" />
     </form>
 
     <div class="footer navbar-inverse navbar-fixed-bottom" >
