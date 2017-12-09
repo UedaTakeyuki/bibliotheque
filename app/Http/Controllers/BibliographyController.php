@@ -62,7 +62,7 @@ class BibliographyController extends Controller
                 break;
             }
             $isSubmitEnabled = session()->exists('isbn')&&session()->exists('price');
-            return view('bibliographies.add',['isSubmitEnabled' => $isSubmitEnabled ? "" : "disabled=disabled"]);
+            return view('bibliographies.add',['isSubmitEnabled' => $isSubmitEnabled]);
         }
     }
 
