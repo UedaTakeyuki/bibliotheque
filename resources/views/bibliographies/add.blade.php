@@ -2,11 +2,11 @@
 
 @section('content')
     <FORM>
-      <INPUT TYPE=BUTTON OnClick="readISBNCord();" VALUE="ISBNコードのスキャン">
+      <INPUT TYPE=BUTTON OnClick="readISBNCord();" VALUE="ISBNコードのスキャン" class="btn btn-default btn-lg btn-block active">
     </FORM>
 
     <FORM>
-      <INPUT TYPE=BUTTON OnClick="readJANCord();" VALUE="JANコードのスキャン">
+      <INPUT TYPE=BUTTON OnClick="readJANCord();" VALUE="JANコードのスキャン" class="btn btn-default btn-lg btn-block active">
     </FORM>
 
     <p style="color: orangered; font-weight: 700">{{$error_str}}</p>
@@ -21,7 +21,7 @@
         ISBN: {{session('isbn')}}<br>
         書名: {{session('title')}}<br>
         価格: {{session('price')}}{{is_null(session('price'))?"":"円"}}<br>
-      <input type="text"    {{$isSubmitEnabled ? '' : 'disabled'}} name="memo" id="memo" placeholder="メモ"/>
-      <input type="submit"  {{$isSubmitEnabled ? '' : 'disabled'}} value="登録" />
+      <textarea {{$isSubmitEnabled ? '' : 'disabled'}} name="memo" id="memo" placeholder="メモ" class="form-control" rows="2"></textarea>
+      <input type="submit"   {{$isSubmitEnabled ? '' : 'disabled'}} value="登録" class="btn btn-default btn-lg btn-block active" />
     </form>
 @endsection
