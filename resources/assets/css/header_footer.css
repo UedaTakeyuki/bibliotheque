@@ -10,7 +10,7 @@
   background-color: #222;
   border-color: #080808;
 }
-.logo {
+.header .logo {
   margin: 0 auto;
 /*  text-decoration: none;*/
   text-shadow: none;
@@ -22,7 +22,7 @@
   -ms-flex-align: center;
   align-items: center;
 }
-.button {
+.header .button {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -35,7 +35,7 @@
   align-items: center;
 }
 /* https://saruwakakun.com/html-css/reference/buttons */
-.btn{
+.header .btn{
 /*    display: inline-block; */
     position: relative;
     text-decoration: none;
@@ -57,7 +57,7 @@
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
 }
-.btn:active{/*押したとき*/
+.header .btn:active{/*押したとき*/
     -ms-transform: translateY(2px);
     -webkit-transform: translateY(2px);
     transform: translateY(2px);/*沈むように*/
