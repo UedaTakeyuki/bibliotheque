@@ -5,25 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <title>Bibliotheque</title>
-  
-		<SCRIPT LANGUAGE="JavaScript">
-    /*
-      function addBarCord() {
-        // launch pic2shop and tell it to open Google Products with scan result
-	      window.location="pic2shop://scan?callback=http%3A//klingsor.uedasoft.com/tools/171002/index.php%3Fcommand%3Dadd%26barcord%3DEAN";
-      }
-      function addQRCord() {
-        // launch pic2shop and tell it to open Google Products with scan result
-	      window.location="pic2shop://scan?callback=http%3A//klingsor.uedasoft.com/tools/171002/index.php%3Fcommand%3Dadd%26barcord%3DQR";
-      }
-    */
+
+<!--		<script src="/js/barcode.js" ></script> -->
+    <script LANGUAGE="JavaScript">
       function readISBNCord() {
         // launch pic2shop and tell it to open Google Products with scan result
-        window.location="pic2shop://scan?callback=http%3A//bibliotheque.uedasoft.com/bibliographies/create%3Fcommand%3DaddISBN%26barcord%3DEAN";
+        window.location="pic2shop://scan?callback=http%3A//bibliotheque.uedasoft.com/bibliographies/create%3Fcommand%3DaddISBN%26barcode%3DEAN";
       }
       function readJANCord() {
         // launch pic2shop and tell it to open Google Products with scan result
-        window.location="pic2shop://scan?callback=http%3A//bibliotheque.uedasoft.com/bibliographies/create%3Fcommand%3DaddJAN%26barcord%3DEAN";
+        window.location="pic2shop://scan?callback=http%3A//bibliotheque.uedasoft.com/bibliographies/create%3Fcommand%3DaddJAN%26barcode%3DEAN";
       }
       function block_duplex(submit){
         if(submit.disabled){
@@ -35,7 +26,7 @@
           return true;
         }
       }
-    </SCRIPT>
+    </script>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
   </head>

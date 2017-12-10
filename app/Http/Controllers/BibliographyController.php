@@ -33,12 +33,16 @@ class BibliographyController extends Controller
     public function create()
     {
         $error_str = "";
+        $command = Input::get('command');
+        $barcode = Input::get('barcode');
         //
-        if (is_null(Input::get('command'))||is_null(Input::get('barcode'))){
-            return view('bibliographies.add');
+        if (is_null($command)||is_null($barcode)){
+            return view('bibliographies.add',['isSubmitEnabled' => False,
+                                              'error_str'       => $error_str,
+                                              'user_id'         => Auth::id()]);
         } else {
-            $command = Input::get('command');
-            $barcode = Input::get('barcode');
+//            $command = Input::get('command');
+//            $barcode = Input::get('barcode');
             switch ($command) {
             case "addISBN":
                 // read bibliographicals from NDL and put it on the FORM.
