@@ -12,6 +12,9 @@ use App\Bibliography;
 // https://s8a.jp/laravel-custom-helper
 use App\Classes\NDLsearch;
 
+// refer: https://github.com/Maatwebsite/Laravel-Excel
+use Excel;
+
 class BibliographyController extends Controller
 {
     /**
@@ -144,5 +147,19 @@ class BibliographyController extends Controller
         //
         Bibliography::destroy($id);
         return $this->index();
+    }
+
+    /**
+     * Download as the Excel file.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function excel(){
+        $bibliographies = Bibliography::all();
+        Excel::create('bibliographies', function($excel) use($bibliographies) {
+            $excel->sheet('Sheet 1', function($sheet) use($bibliographies) {
+                $sheet->fromArray($bibliographies);
+            });
+        })->export('xls');
     }
 }

@@ -16,6 +16,12 @@ Route::group(['middleware' => ['auth']], function () {
     return view('welcome');  
 	});*/
 	Route::get('/', 'BibliographyController@index');
+	Route::get('bibliographies/download',
+		[
+			'as' 	 => 'download.bibliographies.excel',
+			'uses' => 'BibliographyController@excel'
+		]
+	);
 	Route::resource('bibliographies','BibliographyController');
 });
 Auth::routes();

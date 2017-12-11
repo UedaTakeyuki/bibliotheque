@@ -1,6 +1,9 @@
 @extends('layouts.base')
 
 @section('header_left_button')
+  <a class="button btn" href="bibliographies/download">
+    ダウンロード
+  </a>
 @endsection
 
 @section('header_right_button')
