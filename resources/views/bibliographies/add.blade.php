@@ -1,5 +1,14 @@
 @extends('layouts.base')
 
+@section('header_left_button')
+@endsection
+
+@section('header_right_button')
+  <div class="button btn" href="/bibliographies/add">
+    戻る
+  </div>
+@endsection
+
 @section('content')
     <FORM>
       <INPUT TYPE=BUTTON OnClick="readISBNCord();" VALUE="ISBNコードのスキャン" class="btn btn-default btn-lg btn-block active">

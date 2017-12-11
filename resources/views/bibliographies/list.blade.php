@@ -1,5 +1,14 @@
 @extends('layouts.base')
 
+@section('header_left_button')
+@endsection
+
+@section('header_right_button')
+  <a class="button btn" href="/bibliographies/create">
+  	追加
+  </a>
+@endsection
+
 @section('content')
     @foreach($bibliographies as $bibliography)
         <article>

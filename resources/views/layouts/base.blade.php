@@ -13,13 +13,9 @@
   </head>
   <body>
     <header class="header">
-      <div class="button btn">
-        左
-      </div>
+      @yield('header_left_button')
       <h4 class="logo">Bibliotheque</h4>
-      <div class="button btn">
-        右
-      </div>
+      @yield('header_right_button')
     </header>
 
     @yield('content')
