@@ -12,9 +12,10 @@
 */
 Route::group(['middleware' => ['auth']], function () {
   // refer https://qiita.com/washio12/items/59f5cde23b4205973c6b
-	Route::get('/', function () {
-    return view('welcome');
-	});
+/*	Route::get('/', function () {
+    return view('welcome');  
+	});*/
+	Route::get('/', 'BibliographyController@index');
 	Route::resource('bibliographies','BibliographyController');
 });
 Auth::routes();
