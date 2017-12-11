@@ -22,7 +22,8 @@ class BibliographyController extends Controller
     public function index()
     {
         //
-        return "hello";
+        $bibliographies = Bibliography::all();
+        return view('bibliographies.list', compact('bibliographies'));
     }
 
     /**
@@ -93,7 +94,8 @@ class BibliographyController extends Controller
         $bibliography->memo      = $request->memo;
         $bibliography->user_id   = $request->user_id;
         $bibliography->save();
-        return "hello";
+
+        return $this->index();
     }
 
     /**
@@ -116,6 +118,7 @@ class BibliographyController extends Controller
     public function edit($id)
     {
         //
+        return "hello";
     }
 
     /**
@@ -139,5 +142,7 @@ class BibliographyController extends Controller
     public function destroy($id)
     {
         //
+        Bibliography::destroy($id);
+        return $this->index();
     }
 }
