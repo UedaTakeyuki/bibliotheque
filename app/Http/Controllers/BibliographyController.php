@@ -155,7 +155,19 @@ class BibliographyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function excel(){
-        $bibliographies = Bibliography::all();
+//        $bibliographies = Bibliography::all();
+        $bibliographies = Bibliography::select(
+                'isbn as ISBN',
+                'title as タイトル',
+                'creator as 著者',
+                'publisher as 著者',
+                'price as 価格',
+                'memo as メモ',
+                'created_at as 登録日',
+                'updated_at as 更新日'
+                )
+            ->where('user_id',Auth::id())
+            ->get();
         Excel::create('bibliographies', function($excel) use($bibliographies) {
             $excel->sheet('Sheet 1', function($sheet) use($bibliographies) {
                 $sheet->fromArray($bibliographies);
