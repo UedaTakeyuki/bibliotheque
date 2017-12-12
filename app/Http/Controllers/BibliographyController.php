@@ -26,7 +26,7 @@ class BibliographyController extends Controller
     {
         //
         $bibliographies = Bibliography::all();
-        return view('bibliographies.list', compact('bibliographies'));
+        return view('bibliographies.jqm.list', compact('bibliographies'));
     }
 
     /**
@@ -41,9 +41,9 @@ class BibliographyController extends Controller
         $barcode = Input::get('barcode');
         //
         if (is_null($command)||is_null($barcode)){
-            return view('bibliographies.add',['isSubmitEnabled' => False,
-                                              'error_str'       => $error_str,
-                                              'user_id'         => Auth::id()]);
+            return view('bibliographies.jqm.add',['isSubmitEnabled' => False,
+                                                  'error_str'       => $error_str,
+                                                  'user_id'         => Auth::id()]);
         } else {
 //            $command = Input::get('command');
 //            $barcode = Input::get('barcode');
@@ -73,9 +73,9 @@ class BibliographyController extends Controller
                 break;
             }
             $isSubmitEnabled = session()->exists('isbn')&&session()->exists('price');
-            return view('bibliographies.add',['isSubmitEnabled' => $isSubmitEnabled,
-                                              'error_str'       => $error_str,
-                                              'user_id'         => Auth::id()]);
+            return view('bibliographies.jqm.add',['isSubmitEnabled' => $isSubmitEnabled,
+                                                  'error_str'       => $error_str,
+                                                  'user_id'         => Auth::id()]);
         }
     }
 
