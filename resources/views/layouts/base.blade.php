@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ app()->getLocale() }}">
   <head>
     <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+<!--    <title>{{ config('app.name', 'Bibliotheque') }}</title>-->
     <title>Bibliotheque</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   
 		<script src="/js/barcode.js" ></script>
 
