@@ -1,7 +1,7 @@
 @extends('layouts.jqm.base')
 
 @section('header_left_button')
-  <a data-role="button" data-inline="true" href="bibliographies/download" data-transition="fade" data-ajax="false">ダウンロード</a>
+  <a href="#dialogPage" data-rel="dialog" data-role="button" data-close-btn-text="Fermer">メニュー</a>
 @endsection
 
 @section('header_right_button')
@@ -22,4 +22,19 @@
           <b>メモ: </b>{{$bibliography->memo}}<br><hr>
         </article>
     @endforeach
+@endsection
+
+@section('dialog')
+  <div data-role="page" id="dialogPage">
+    <div data-role="header">
+      <h2>メニュー</h2>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview">
+        <li><a href="bibliographies/download">ダウンロード</a></li>
+        <li><a href="logout">ログアウト</a></li>
+      </ul>
+      <a href="" data-role="button" data-rel="back">メニューを閉じる</a>
+    </div>
+  </div>
 @endsection

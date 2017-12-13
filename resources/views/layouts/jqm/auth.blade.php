@@ -49,7 +49,7 @@
 
       <div data-role="footer" data-position="fixed" data-disable-page-zoom="false">
         <h4 style="font-weight: bold">© Atelier UEDA🐸</h4>
-        <a href="#dialogPage" data-rel="dialog" data-close-btn-text="Fermer">Open dialog</a>
+<!--        <a href="#dialogPage" data-rel="dialog" data-close-btn-text="Fermer">Open dialog</a> -->
       </div>
     </div>
     

@@ -1,6 +1,7 @@
 @extends('layouts.jqm.base')
 
 @section('header_left_button')
+  <a href="#dialogPage" data-rel="dialog" data-role="button" data-close-btn-text="Fermer">メニュー</a>
 @endsection
 
 @section('header_right_button')
@@ -32,4 +33,18 @@
       <input {{$isSubmitEnabled ? '' : 'disabled'}} value="登録" class="btn btn-default btn-lg btn-block active" onclick="submit()"/>
 <!--      <input type="submit"   {{$isSubmitEnabled ? '' : 'disabled'}} value="登録" class="btn btn-default btn-lg btn-block active" /> avoid JQM effect -->
     </form>
+@endsection
+
+@section('dialog')
+  <div data-role="page" id="dialogPage">
+    <div data-role="header">
+      <h2>メニュー</h2>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview">
+        <li><a href="logout">ログアウト</a></li>
+      </ul>
+      <a href="" data-role="button" data-rel="back">メニューを閉じる</a>
+    </div>
+  </div>
 @endsection
