@@ -33,6 +33,7 @@
       <ul data-role="listview">
         <li><a href="bibliographies/download">ダウンロード</a></li>
         <li><a href="logout">ログアウト</a></li>
+        <li><a href="https://github.com/UedaTakeyuki/bibliotheque">ソースコード</a></li>
       </ul>
       <a href="" data-role="button" data-rel="back">メニューを閉じる</a>
     </div>
