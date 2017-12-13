@@ -11,10 +11,10 @@
 @section('content')
     @foreach($bibliographies as $bibliography)
         <article>
-        	<form method="post" action="/bibliographies/{{$bibliography->id}}">
+        	<form method="post" action="/bibliographies/{{$bibliography->id}}" style="width: 4em">
                 <input name="_method" type="hidden" value="delete">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
-                <input type="submit" value="削除" class="btn btn-sm btn-destroy" onclick="javascript:return confirm('本当に削除しますか？')" data-role="button" data-inline="true">
+                <input class="btn btn-sm btn-destroy" value="削除" onclick="javascript:if (confirm('本当に削除しますか？')){submit()}">
           </form>
           <b>登録日: </b>{{$bibliography->created_at}}<br>
           <b>タイトル: </b>{{$bibliography->title}}<br>
