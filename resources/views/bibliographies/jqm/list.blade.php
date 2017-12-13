@@ -18,7 +18,7 @@
           </form>
           <b>登録日: </b>{{$bibliography->created_at}}<br>
           <b>タイトル: </b>{{$bibliography->title}}<br>
-          <b>価格: </b>{{$bibliography->price}}<br>
+          <b>価格: </b>{{$bibliography->price}}円<br>
           <b>メモ: </b>{{$bibliography->memo}}<br><hr>
         </article>
     @endforeach
