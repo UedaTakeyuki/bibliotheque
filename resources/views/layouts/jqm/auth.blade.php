@@ -10,7 +10,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
   
-		<script src="/js/barcode.js" ></script>
+        <script src="/js/barcode.js" ></script>
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
@@ -18,14 +18,28 @@
 <!--    <link rel="stylesheet" href="{{asset('css/all.css')}}"> -->
   </head>
   <body>
-    <div data-role="page">
+      <div data-role="page">
       <div data-role="header" data-position="fixed" data-disable-page-zoom="false">
         <h4 style="font-weight: bold">Bibliotheque</h4>
         <div class="ui-btn-left">
-          @yield('header_left_button')
+            @guest
+                <a href="{{ route('register') }}">Register</a>
+            @else
+            @endguest
         </div>
         <div class="ui-btn-right">
-          @yield('header_right_button')
+            @guest
+                <a href="{{ route('login') }}">Login</a>
+            @else
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            @endguest
         </div>
       </div>
 
@@ -38,18 +52,8 @@
         <a href="#dialogPage" data-rel="dialog" data-close-btn-text="Fermer">Open dialog</a>
       </div>
     </div>
-
-    <div data-role="page" id="dialogPage">
-      <div data-role="header">
-        <h2>メニュー</h2>
-      </div>
-      <div data-role="content">
-        <ul data-role="listview">
-          <li><a href="index.html">Acura</a></li>
-          <li><a href="index.html">Audi</a></li>
-        </ul>
-        <a href="" data-role="button" data-rel="back">メニューを閉じる</a>
-      </div>
-    </div>
-  </body>
+    
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+</body>
 </html>

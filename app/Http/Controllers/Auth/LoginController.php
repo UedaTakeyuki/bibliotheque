@@ -36,4 +36,16 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * Show Login Form.
+     *
+     * refer: https://stackoverflow.com/questions/40818801/how-to-change-default-laravel-auth-login-view
+     *
+     * @return void
+     */
+    public function showLoginForm()
+    {
+        return view('auth.jqm.login');
+    }
 }
