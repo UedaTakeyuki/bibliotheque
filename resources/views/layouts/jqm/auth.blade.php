@@ -15,12 +15,14 @@
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
 <!--    <link rel="stylesheet" href="{{asset('css/all.css')}}"> -->
   </head>
   <body>
       <div data-role="page">
       <div data-role="header" data-position="fixed" data-disable-page-zoom="false">
-        <h4 style="font-weight: bold">Bibliotheque</h4>
+        <h1 style="font-weight: bold; font-family: 'Parisienne', cursive; text-shadow: 4px 4px 4px #aaa;">Bibliotheque</h1>
         <div class="ui-btn-left">
             @guest
                 <a href="{{ route('register') }}">Register</a>
@@ -48,8 +50,7 @@
       </div>
 
       <div data-role="footer" data-position="fixed" data-disable-page-zoom="false">
-        <h4 style="font-weight: bold">© Atelier UEDA🐸</h4>
-<!--        <a href="#dialogPage" data-rel="dialog" data-close-btn-text="Fermer">Open dialog</a> -->
+        <h1 style="font-weight: bold">© Atelier UEDA<img src={{url("favicon.ico")}}></h1>
       </div>
     </div>
     
