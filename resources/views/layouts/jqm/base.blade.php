@@ -20,6 +20,7 @@
 <!--    <link rel="stylesheet" href="{{asset('css/all.css')}}"> -->
   </head>
   <body>
+    <div id="app">
     <div data-role="page">
       <div data-role="header" data-position="fixed" data-disable-page-zoom="false">
         <h1 style="font-weight: bold; font-family: 'Parisienne', cursive; text-shadow: 4px 4px 4px #aaa;">Bibliotheque</h1>
@@ -41,6 +42,6 @@
     </div>
 
     @yield('dialog')
-
+    </div><!-- id="app"-->
   </body>
 </html>

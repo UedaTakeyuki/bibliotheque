@@ -20,6 +20,7 @@
 <!--    <link rel="stylesheet" href="{{asset('css/all.css')}}"> -->
   </head>
   <body>
+    <div id="app">
       <div data-role="page">
       <div data-role="header" data-position="fixed" data-disable-page-zoom="false">
         <h1 style="font-weight: bold; font-family: 'Parisienne', cursive; text-shadow: 4px 4px 4px #aaa;">Bibliotheque</h1>
@@ -53,8 +54,13 @@
         <h1 style="font-weight: bold">© Atelier UEDA<img src={{url("favicon.ico")}}></h1>
       </div>
     </div>
-    
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    @hasSection('dialog')
+        @yield('dialog')
+    @else
+    @endif
+  </div><!--<div id="app">-->
+
+  <!-- Scripts -->
+  <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
