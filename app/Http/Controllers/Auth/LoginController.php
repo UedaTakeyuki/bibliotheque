@@ -44,8 +44,9 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function showLoginForm()
+/*    public function showLoginForm()
     {
         return view('auth.jqm.login');
     }
+*/
 }
