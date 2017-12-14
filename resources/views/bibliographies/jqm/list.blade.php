@@ -32,7 +32,11 @@
     <div data-role="content">
       <ul data-role="listview">
         <li><a href="bibliographies/download">ダウンロード</a></li>
-        <li><a href="logout">ログアウト</a></li>
+        <li><form id="logout" method="post" action="logout" style="width: 4em">
+              <input type="hidden" name="_token" value="{{csrf_token()}}">
+            </form>
+            <a onclick="document.getElementById('logout').submit()">ログアウト</a>
+        </li>
         <li><a href="https://github.com/UedaTakeyuki/bibliotheque">ソースコード</a></li>
       </ul>
       <a href="" data-role="button" data-rel="back">メニューを閉じる</a>
