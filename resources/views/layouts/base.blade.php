@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-<!--    <title>{{ config('app.name', 'Bibliotheque') }}</title>-->
-    <title>Bibliotheque</title>
+    <title>{{ config('app.name', 'Bibliotheque') }}</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
   
@@ -18,7 +17,7 @@
   <body>
     <header class="header">
       @yield('header_left_button')
-      <h4 class="logo">Bibliotheque</h4>
+      <h4 class="logo">{{ config('app.name', 'Bibliotheque') }}</h4>
       @yield('header_right_button')
     </header>
 
